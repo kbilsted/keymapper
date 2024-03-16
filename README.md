@@ -47,6 +47,21 @@ The command line argument `-u` causes the configuration to be automatically relo
 
 :warning: **In case of emergency:** You can always press the special key combination <kbd>Shift</kbd>+<kbd>Escape</kbd>+<kbd>K</kbd> to terminate `keymapperd`.
 
+
+### Grammar
+PROGRAM ::= COMMENT | REMAP
+REMAP 	::= INPUT '>>' OUTPUT
+INPUT 	::= ISUCCESSIVE | ISIMULTANIOUS | IHOLD | INOT | 
+ISUCCESSIVE ::= NAME NAME
+ISIMULTANIOUS ::= '(' NAME NAME ')'
+IHOLD ::= NAME '{' NAME '}'
+INOT ::= '!' NAME
+NAME	:: (A..Z)*
+COMMENT ::= ('#' | ';') *
+
+
+
+
 ### Key names
 
 The keys are named after their scan codes and are not affected by the present keyboard layout.
